@@ -1,0 +1,30 @@
+{
+  "name": "cdk-workspace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mnatsu31/cdk-workspace.git",
+  "author": "Makoto Natsuaki <ohana.am29@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "npm-run-all -p 'build:*'",
+    "dev": "npm-run-all -p 'dev:*'",
+    "test": "yarn workspaces run test",
+    "lint": "yarn workspaces run lint",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "husky install"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test && yarn lint && yarn format",
+      "pre-push": "yarn test && yarn lint && yarn format"
+    }
+  },
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "npm-run-all": "^4.1.5"
+  }
+}

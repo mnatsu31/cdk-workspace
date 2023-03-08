@@ -1,0 +1,14 @@
+{
+  "name": "basic-auth",
+  "version": "1.0.0",
+  "description": "basic authentication for cloudfront with lambda edge",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.11",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  }
+}
